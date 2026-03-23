@@ -1,1 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Alfa Bac</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
+<div class="container">
+
+  <h1>⚜️ Alfa Bac</h1>
+  <p class="sub">Precisão acima da sorte</p>
+
+  <div class="card signal-box">
+    <p id="status">Aguardando análise...</p>
+    <h2 id="sinal">---</h2>
+    <p id="prob"></p>
+    <p id="tempo"></p>
+  </div>
+
+  <button onclick="iniciarAnalise()">ANALISAR AGORA</button>
+
+  <div class="card">
+    <h3>📊 Performance</h3>
+    <p id="winrate">Win Rate: --%</p>
+  </div>
+
+  <div class="card">
+    <h3>📜 Histórico</h3>
+    <ul id="historico"></ul>
+  </div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>

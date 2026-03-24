@@ -30,7 +30,6 @@ function gerarSinal() {
     document.getElementById("sinal").innerText = sinal;
     document.getElementById("prob").innerText = "Confiança: " + prob + "%";
 
-    // Simulação de resultado
     let win = Math.random() > 0.4;
     total++;
 
@@ -44,7 +43,6 @@ function gerarSinal() {
 
     iniciarContador();
 
-    // Libera uso depois de 20s
     setTimeout(() => {
         podeUsar = true;
     }, 20000);
@@ -77,8 +75,4 @@ function iniciarContador() {
             clearInterval(intervalo);
         }
     }, 1000);
-}
-
-function entrarVIP() {
-    alert("🔥 Acesso VIP desbloqueia sinais em tempo real.\nContacta-nos via Telegram.");
 }

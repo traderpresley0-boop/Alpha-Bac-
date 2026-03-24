@@ -1,7 +1,7 @@
 body {
   background: #020617;
   color: #e2e8f0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial;
   text-align: center;
 }
 
@@ -12,6 +12,7 @@ h1 {
 
 .sub {
   color: #94a3b8;
+  padding: 10px;
 }
 
 .container {
@@ -40,6 +41,7 @@ button {
   border-radius: 10px;
   font-weight: bold;
   cursor: pointer;
+  margin-top: 10px;
 }
 
 button:hover {

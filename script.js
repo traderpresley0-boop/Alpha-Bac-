@@ -1,3 +1,4 @@
+let podeUsar = true;
 let historico = [];
 let wins = 0;
 let total = 0;

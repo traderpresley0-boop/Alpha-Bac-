@@ -1,12 +1,19 @@
-let podeUsar = true;
 let historico = [];
 let wins = 0;
 let total = 0;
+let podeUsar = true;
 
 function iniciarAnalise() {
+
+    if (!podeUsar) {
+        alert("🔒 Acesso VIP necessário para novos sinais");
+        return;
+    }
+
+    podeUsar = false;
+
     document.getElementById("status").innerText = "🔎 Analisando mercado...";
     document.getElementById("sinal").innerText = "...";
-    document.getElementById("tempo").innerText = "";
 
     setTimeout(() => {
         gerarSinal();
@@ -15,6 +22,7 @@ function iniciarAnalise() {
 
 function gerarSinal() {
     let random = Math.random();
+
     let sinal = random > 0.5 ? "🟢 BIG" : "🔴 SMALL";
     let prob = (68 + Math.random() * 20).toFixed(0);
 
@@ -22,7 +30,7 @@ function gerarSinal() {
     document.getElementById("sinal").innerText = sinal;
     document.getElementById("prob").innerText = "Confiança: " + prob + "%";
 
-    // simulação de resultado
+    // Simulação de resultado
     let win = Math.random() > 0.4;
     total++;
 
@@ -35,6 +43,11 @@ function gerarSinal() {
     atualizarWinrate();
 
     iniciarContador();
+
+    // Libera uso depois de 20s
+    setTimeout(() => {
+        podeUsar = true;
+    }, 20000);
 }
 
 function atualizarHistorico() {
@@ -49,7 +62,7 @@ function atualizarHistorico() {
 }
 
 function atualizarWinrate() {
-    let winrate = ((wins / total) * 100).toFixed(0);
+    let winrate = total > 0 ? ((wins / total) * 100).toFixed(0) : 0;
     document.getElementById("winrate").innerText = "Win Rate: " + winrate + "%";
 }
 
@@ -64,4 +77,8 @@ function iniciarContador() {
             clearInterval(intervalo);
         }
     }, 1000);
+}
+
+function entrarVIP() {
+    alert("🔥 Acesso VIP desbloqueia sinais em tempo real.\nContacta-nos via Telegram.");
 }
